@@ -1,5 +1,12 @@
+import { NavLink } from "react-router-dom";
+// import SignUp from "../pages/SignUp";
+
 function Navbar() {
-    return ( <></> );
+    return ( 
+    <>
+     <NavLink to="/signup" style={{color: "white"}}>Sign up</NavLink>  
+    
+    </> );
 }
 
-export default Navba<></>r;
+export default Navbar;

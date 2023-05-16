@@ -2,6 +2,8 @@ import { Link, Routes, Route, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import Play from './pages/Play';
 import Profile from './pages/Profile';
+import Navbar from './components/Navbar';
+import SignUp from './pages/SignUp';
 
 function App() {
   const location = useLocation();
@@ -14,11 +16,17 @@ function App() {
 
   return (
     <>
+
+      <div><Navbar/></div>
       {!isPlayPage && <Link to="/play">START LEARNING</Link>}
       
 
       <Routes>
         {/* <Route path="/" element={<HomeScreen/>}/> */}
+        <Route 
+        path="/signup"
+        element={<SignUp/>}/>
+        
         <Route 
         path="/play" 
         element={<Play setTries={setTries} setCorrectAnswers={setCorrectAnswers}/>}
