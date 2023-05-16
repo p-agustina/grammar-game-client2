@@ -1,0 +1,14 @@
+.btns-container {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+  }
+
+  h1 {
+    text-shadow: 2px 4px 4px rgba(46,91,173,0.6);
+    padding: 20px;
+  }
+
+  button {
+    margin: 10px;
+  }
