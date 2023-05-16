@@ -4,6 +4,7 @@ import Play from './pages/Play';
 import Profile from './pages/Profile';
 import Navbar from './components/Navbar';
 import SignUp from './pages/SignUp';
+import LogIn from './pages/LogIn';
 
 function App() {
   const location = useLocation();
@@ -27,6 +28,10 @@ function App() {
         path="/signup"
         element={<SignUp/>}/>
         
+        <Route 
+        path="/login"
+        element={<LogIn/>}/>
+
         <Route 
         path="/play" 
         element={<Play setTries={setTries} setCorrectAnswers={setCorrectAnswers}/>}

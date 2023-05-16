@@ -4,7 +4,8 @@ import { NavLink } from "react-router-dom";
 function Navbar() {
     return ( 
     <>
-     <NavLink to="/signup" style={{color: "white"}}>Sign up</NavLink>  
+     <NavLink to="/signup" style={{color: "white"}}>Sign up</NavLink>
+     <NavLink to="/login" style={{color: "white"}}>Log in</NavLink>
     
     </> );
 }

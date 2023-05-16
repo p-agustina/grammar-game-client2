@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -36,16 +36,16 @@ function SignUp() {
     <div className="authContainer">
       <h1>Sign Up</h1>
 
-      <form className="authForm" onSubmit={handleSignupSubmit}>
-        <label className="authLabel">
-        <input className="authInput" placeholder="Name" type="text" name="name" value={name} onChange={handleName} />
+      <form onSubmit={handleSignupSubmit}>
+        <label>
+        <input placeholder="Name" type="text" name="name" value={name} onChange={handleName} />
         </label>
-        <label className="authLabel">
-        <input className="authInput" placeholder="Email Address" type="email" name="email" value={email} onChange={handleEmail} />
+        <label>
+        <input placeholder="Email Address" type="email" name="email" value={email} onChange={handleEmail} />
         </label>
-        <label className="authLabel">
+        <label>
         <input
-          className="authInput"
+          
           placeholder="Password"
           type="password"
           name="password"
@@ -54,13 +54,13 @@ function SignUp() {
         />
         </label>
 
-        <button className="authBtn" type="submit">Sign Up</button>
+        <button type="submit">Sign Up</button>
       </form>
 
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {errorMessage && <p>{errorMessage}</p>}
 
       <p>Already have account?</p>
-      <Link to={"/login"}> <button className="authBtn">Login</button></Link>
+      <Link to={"/login"}> <button>Login</button></Link>
       </div>
     </div>
   );
