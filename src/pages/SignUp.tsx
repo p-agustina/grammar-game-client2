@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = process.env.REACT_APP_API_URL;
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -12,17 +12,18 @@ function SignUp() {
 
   const navigate = useNavigate();
 
-  const handleEmail = (e) => setEmail(e.target.value);
-  const handlePassword = (e) => setPassword(e.target.value);
-  const handleName = (e) => setName(e.target.value);
+  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
+  const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
+  const handleName = (e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value);
 
-  const handleSignupSubmit = (e) => {
+  const handleSignupSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     
     const requestBody = { email, password, name };
  
     axios.post(`${API_URL}/auth/signup`, requestBody)
-      .then((response) => {
+      .then(() => {
         navigate('/login');
       })
       .catch((error) => {
